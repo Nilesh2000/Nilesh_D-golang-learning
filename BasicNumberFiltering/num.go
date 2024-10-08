@@ -4,8 +4,6 @@ import (
 	"math"
 )
 
-type numbers []int
-
 func isEven(n int) bool {
 	return n%2 == 0
 }
@@ -34,8 +32,8 @@ func isPrime(n int) bool {
 	return true
 }
 
-func Even(n numbers) numbers {
-	output := numbers{}
+func Even(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isEven(num) {
 			output = append(output, num)
@@ -44,8 +42,8 @@ func Even(n numbers) numbers {
 	return output
 }
 
-func Odd(n numbers) numbers {
-	output := numbers{}
+func Odd(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isOdd(num) {
 			output = append(output, num)
@@ -54,8 +52,8 @@ func Odd(n numbers) numbers {
 	return output
 }
 
-func Prime(n numbers) numbers {
-	output := numbers{}
+func Prime(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isPrime(num) {
 			output = append(output, num)
@@ -64,8 +62,8 @@ func Prime(n numbers) numbers {
 	return output
 }
 
-func PrimeAndOdd(n numbers) numbers {
-	output := numbers{}
+func PrimeAndOdd(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isPrime(num) && isOdd(num) {
 			output = append(output, num)
@@ -74,8 +72,8 @@ func PrimeAndOdd(n numbers) numbers {
 	return output
 }
 
-func EvenAndMultipleOfFive(n numbers) numbers {
-	output := numbers{}
+func EvenAndMultipleOfFive(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isEven(num) && isMultipleOfFive(num) {
 			output = append(output, num)
@@ -84,8 +82,8 @@ func EvenAndMultipleOfFive(n numbers) numbers {
 	return output
 }
 
-func OddAndMultipleOfThreeAndGreaterThanTen(n numbers) numbers {
-	output := numbers{}
+func OddAndMultipleOfThreeAndGreaterThanTen(n []int) []int {
+	output := []int{}
 	for _, num := range n {
 		if isOdd(num) && isMultipleOfThree(num) && num > 10 {
 			output = append(output, num)
