@@ -100,12 +100,10 @@ func calculateGrade(students []student) []studentStat {
 
 func findOverallTopper(gradedStudents []studentStat) studentStat {
 	topper := studentStat{}
-	var topperScore float32
 
 	for _, ss := range gradedStudents {
-		if ss.finalScore > topperScore {
+		if ss.finalScore > topper.finalScore {
 			topper = ss
-			topperScore = ss.finalScore
 		}
 	}
 	return topper
