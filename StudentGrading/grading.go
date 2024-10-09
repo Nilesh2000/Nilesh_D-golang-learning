@@ -113,13 +113,8 @@ func findTopperPerUniversity(gs []studentStat) map[string]studentStat {
 	topperPerUniversity := make(map[string]studentStat)
 
 	for _, ss := range gs {
-		val, ok := topperPerUniversity[ss.university]
-		if !ok {
+		if currentTopper, exists := topperPerUniversity[ss.university]; !exists || ss.finalScore > currentTopper.finalScore {
 			topperPerUniversity[ss.university] = ss
-		} else {
-			if ss.finalScore > val.finalScore {
-				topperPerUniversity[ss.university] = ss
-			}
 		}
 	}
 	return topperPerUniversity
