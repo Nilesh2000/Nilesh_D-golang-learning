@@ -2,6 +2,7 @@ package grading
 
 import (
 	"encoding/csv"
+	"fmt"
 	"os"
 	"strconv"
 )
@@ -24,6 +25,10 @@ type studentStat struct {
 	student
 	finalScore float32
 	grade      Grade
+}
+
+func (s student) String() string {
+	return fmt.Sprintf("%s %s from %s has test scores of %d, %d, %d and %d", s.firstName, s.lastName, s.university, s.test1Score, s.test2Score, s.test3Score, s.test4Score)
 }
 
 func parseCSV(filePath string) []student {
